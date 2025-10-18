@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://di3ex08eio8xl"]
+
+[ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="1_vjb58"]
+[ext_resource type="Script" uid="uid://cjbna1tgfufmo" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://dcrawx1rfa2gv" path="res://assets/sprites/pocketwatch_transparent.png" id="3_con2f"]
+
+[sub_resource type="Theme" id="Theme_con2f"]
+default_font = ExtResource("1_vjb58")
+default_font_size = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_con2f")
+script = ExtResource("1_yqeox")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="Main Screen" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+
+[node name="Text" type="Label" parent="Main Screen"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Speed Sleuth"
+horizontal_alignment = 1
+
+[node name="Pocketwatch" type="TextureRect" parent="Main Screen"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_con2f")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Main Screen"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 67
+text = "Choose Case"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Screen"]
+layout_mode = 2
+alignment = 1
+
+[node name="Case 1" type="Button" parent="Main Screen/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+text = "Case 1"
+
+[connection signal="mouse_entered" from="Main Screen/HBoxContainer/Case 1" to="." method="_on_case_1_mouse_entered"]
+[connection signal="mouse_exited" from="Main Screen/HBoxContainer/Case 1" to="." method="_on_case_1_mouse_exited"]
+[connection signal="pressed" from="Main Screen/HBoxContainer/Case 1" to="." method="_on_case_1_pressed"]
