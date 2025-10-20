@@ -1,2 +1,3 @@
-res://scenes/pre_case_screen.tscn
-res://scripts/pre_case_screen.gd
+res://scenes/menu.tscn
+res://stopwatch.gd
+res://stopwatch.tscn
