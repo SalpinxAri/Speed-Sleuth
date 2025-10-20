@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqrttkf7xv3xm"]
+
+[ext_resource type="Texture2D" uid="uid://dnlkuetdvkj0k" path="res://assets/sprites/Case1_Intro_cutscene/Case2Intro1Img1.jpg" id="1_a320b"]
+[ext_resource type="Script" uid="uid://2v8e8xs46nwt" path="res://scripts/cutscene.gd" id="2_0sipp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bm7f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs8wb"]
+
+[node name="Cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="Text_box" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 546.0
+offset_right = 919.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+
+[node name="Text" type="Label" parent="Text_box"]
+custom_minimum_size = Vector2(576, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "A child has been stolen from a hospital by a person who appears to be a nurse. The child has been missing for at least 3 hours, and the cameras did not pick up anything. The suspect is likely to have a partner who is holding the child while they are being interrogated. 
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 571.0
+offset_right = 1151.0
+offset_bottom = 646.0
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2bm7f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fs8wb")
+text = "Continue"
+
+[node name="Cutscene_imgs" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 39.0
+offset_right = 800.0
+offset_bottom = 524.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Cutscene_imgs"]
+layout_mode = 2
+texture = ExtResource("1_a320b")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("2_0sipp")
+
+[connection signal="pressed" from="HBoxContainer/ContinueButton" to="Cutscene_imgs/TextureRect" method="_on_continue_button_pressed"]
