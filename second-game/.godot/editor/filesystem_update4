@@ -1,2 +1,8 @@
-res://scenes/pre_case_screen.tscn
-res://scripts/pre_case_screen.gd
+res://scripts/questions.gd
+res://scenes/ask_questions.tscn
+res://scripts/ask_question.gd
+res://scripts/suspect.gd
+res://scripts/suspect_img.gd
+res://scenes/cutscene.tscn
+res://scripts/add_to_notes_button.gd
+res://scenes/suspect_name.gd
