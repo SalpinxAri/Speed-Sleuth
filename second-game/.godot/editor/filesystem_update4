@@ -11,3 +11,5 @@ res://scripts/suspect_img.gd
 res://scripts/suspect_name.gd
 res://scripts/questions.gd
 res://scripts/ask_question.gd
+res://scripts/add_to_notes_button.gd
+res://scripts/response.gd

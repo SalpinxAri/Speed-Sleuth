@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cljcdt16rmg05"]
+[gd_scene load_steps=11 format=3 uid="uid://cljcdt16rmg05"]
 
 [ext_resource type="Script" uid="uid://b3a6d1emr12fc" path="res://scripts/suspect.gd" id="1_3wvmk"]
 [ext_resource type="Texture2D" uid="uid://d18cj6dfjruhs" path="res://assets/sprites/icon.svg" id="2_1a1s3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ceafoki62q5m0" path="res://scripts/questions.gd" id="5_nfgpo"]
 [ext_resource type="Script" uid="uid://sej7alfkvpjt" path="res://scripts/add_to_notes_button.gd" id="6_ilq03"]
 [ext_resource type="Script" uid="uid://d3fu7lvxyqoaf" path="res://scripts/ask_question.gd" id="7_btou2"]
+[ext_resource type="Script" uid="uid://c2i0eus2cpqdn" path="res://scripts/response.gd" id="8_qdwts"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_klkq2"]
 font_size = 24
@@ -60,13 +61,15 @@ script = ExtResource("4_nlm84")
 
 [node name="Questions" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 537.0
-offset_right = 230.0
-offset_bottom = 577.0
+offset_left = 75.0
+offset_top = 585.0
+offset_right = 255.0
+offset_bottom = 625.0
 
 [node name="OptionButton" type="OptionButton" parent="Questions"]
+custom_minimum_size = Vector2(209.64, 0)
 layout_mode = 2
+clip_text = true
 selected = 0
 fit_to_longest_item = false
 allow_reselect = true
@@ -78,10 +81,10 @@ suspect_name_path = NodePath("../..")
 
 [node name="Add_to_notes" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 488.0
-offset_right = 157.0
-offset_bottom = 528.0
+offset_left = 25.0
+offset_top = 535.0
+offset_right = 132.0
+offset_bottom = 575.0
 
 [node name="Button" type="Button" parent="Add_to_notes"]
 layout_mode = 2
@@ -90,10 +93,10 @@ script = ExtResource("6_ilq03")
 
 [node name="Ask_question" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 537.0
-offset_right = 340.0
-offset_bottom = 577.0
+offset_left = 312.0
+offset_top = 585.0
+offset_right = 352.0
+offset_bottom = 625.0
 
 [node name="Button" type="Button" parent="Ask_question"]
 layout_mode = 2
@@ -117,9 +120,11 @@ label_settings = SubResource("LabelSettings_5maji")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("8_qdwts")
 
 [connection signal="choice_changed" from="." to="Suspect_img/TextureRect" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Suspect_name/Label" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Questions/OptionButton" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Ask_question/Button" method="_on_ask_questions_choice_changed"]
+[connection signal="choice_changed" from="." to="Response/Label" method="_on_ask_questions_choice_changed"]
 [connection signal="item_selected" from="Questions/OptionButton" to="Ask_question/Button" method="_on_option_button_item_selected"]

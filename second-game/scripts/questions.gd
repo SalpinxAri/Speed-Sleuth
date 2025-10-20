@@ -5,7 +5,7 @@ extends OptionButton
 var suspect_name = "Adolphne Sax"
 var is_suspect = false
 
-var questions = [false, false, false, false, false]
+var questions = 1
 # Need to import these based on which person it is. 
 var questions_text = []
 
@@ -45,7 +45,6 @@ func _on_ask_questions_choice_changed() -> void:
 				"Do you have any children of your own, or are you looking to have children of your own?"
 			]
 		_:
-			print("WITNESS", suspect_name)
 			is_suspect = false
 			questions_text = [
 				"What did you witness?"
@@ -54,8 +53,8 @@ func _on_ask_questions_choice_changed() -> void:
 	if is_suspect:
 		self.clear()
 		self.add_item("Pick a question", 0)
-		for i in range(len(questions)):
-			if questions[i]:
+		for i in range(5):
+			if i < questions:
 				self.add_item(questions_text[i], i+1)
 	else:
 		self.clear()
