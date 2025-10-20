@@ -1,9 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://d17bh2sjnob2a"]
+[gd_scene load_steps=9 format=3 uid="uid://d17bh2sjnob2a"]
 
 [ext_resource type="Texture2D" uid="uid://ciwc5lu0qc87t" path="res://assets/sprites/Fq2VxM.png" id="1_0v128"]
+[ext_resource type="Script" uid="uid://bxj4ud84x0nu" path="res://scripts/pre_case_screen.gd" id="1_6ajul"]
+[ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="2_v7f72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7f72"]
-size = Vector2(42, 145)
+size = Vector2(75, 283.5)
+
+[sub_resource type="Theme" id="Theme_6ajul"]
+default_font = ExtResource("2_v7f72")
+default_font_size = 39
+
+[sub_resource type="Theme" id="Theme_us2w4"]
+
+[sub_resource type="Theme" id="Theme_bpp1d"]
+default_font = ExtResource("2_v7f72")
+default_font_size = 57
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvwe6"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 
 [node name="Pre-Case Screen" type="Control"]
 layout_mode = 3
@@ -12,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6ajul")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -19,24 +40,58 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(648, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-33, 178.00003)
+scale = Vector2(1.7251438, 1.882925)
+texture = ExtResource("1_0v128")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-57.5, 189.75)
+shape = SubResource("RectangleShape2D_v7f72")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 355.0
+offset_right = 1059.0
+offset_bottom = 530.0
+theme = SubResource("Theme_6ajul")
+color = Color(1, 1, 1, 0.54901963)
+
+[node name="Label" type="Label" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -576.0
-offset_right = 576.0
-offset_bottom = 648.0
+offset_left = -355.0
+offset_top = 11.0
+offset_right = 400.0
+offset_bottom = 166.0
 grow_horizontal = 2
+theme = SubResource("Theme_us2w4")
+text = "I've got 5 minutes to solve this case, or I'm...
+A potential homicide, was he framed? Was it an accident? 
+Is he a cold blooded murderer? 
+You have three minutes, it’s up to you Casey."
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="VBoxContainer"]
-position = Vector2(648, 0)
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.5
+offset_top = -82.0
+offset_right = 82.5
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_bpp1d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_lvwe6")
+text = "Continue"
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/CharacterBody2D"]
-position = Vector2(-13, 189)
-scale = Vector2(3, 3)
-texture = ExtResource("1_0v128")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/CharacterBody2D"]
-position = Vector2(189, 181)
-shape = SubResource("RectangleShape2D_v7f72")
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

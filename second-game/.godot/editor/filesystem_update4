@@ -1,4 +1,2 @@
-res://scenes/menu.tscn
-res://scripts/menu.gd
-res://scripts/cutscene.gd
-res://scenes/cutscene.tscn
+res://scenes/pre_case_screen.tscn
+res://scripts/pre_case_screen.gd
