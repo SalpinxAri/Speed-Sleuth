@@ -1,33 +1,30 @@
-<<<<<<< HEAD
-[gd_scene load_steps=0 format=3 uid="uid://fqg44pwp5hdq"]
-=======
-[gd_scene load_steps=6 format=3 uid="uid://fqg44pwp5hdq"]
+[gd_scene load_steps=6 format=3 uid="uid://bq2l5ttdm3vpx"]
 
-[ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="1_712p6"]
+[ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="1_uplbc"]
 
-[sub_resource type="Theme" id="Theme_712p6"]
-default_font = ExtResource("1_712p6")
+[sub_resource type="Theme" id="Theme_uplbc"]
+default_font = ExtResource("1_uplbc")
 
-[sub_resource type="Theme" id="Theme_4w0dx"]
+[sub_resource type="Theme" id="Theme_tv7u2"]
 
-[sub_resource type="Theme" id="Theme_4ongv"]
-default_font = ExtResource("1_712p6")
+[sub_resource type="Theme" id="Theme_m2wos"]
+default_font = ExtResource("1_uplbc")
 
-[sub_resource type="Theme" id="Theme_vuvln"]
-default_font = ExtResource("1_712p6")
+[sub_resource type="Theme" id="Theme_0gufw"]
+default_font = ExtResource("1_uplbc")
 default_font_size = 15
->>>>>>> 38d558af66f73ef238745a964475feb063892525
 
-[node name="Case" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
 [node name="TabContainer" type="TabContainer" parent="."]
 offset_top = 432.0
 offset_right = 1152.0
 offset_bottom = 648.0
-theme = SubResource("Theme_712p6")
-current_tab = 0
+theme = SubResource("Theme_uplbc")
+current_tab = 1
 
 [node name="Overview" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -35,15 +32,14 @@ metadata/_tab_index = 0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme = SubResource("Theme_4w0dx")
+theme = SubResource("Theme_tv7u2")
 theme_override_font_sizes/font_size = 32
 text = "The first 72 hours are the most critical in finding a missing child, is that enough time for you? 
 Every criminal makes mistakes, it's up to you to find the truth Casey!"
 
 [node name="People" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
-theme = SubResource("Theme_4ongv")
+theme = SubResource("Theme_m2wos")
 theme_override_font_sizes/font_size = 17
 metadata/_tab_index = 1
 
@@ -52,7 +48,7 @@ layout_mode = 0
 offset_left = 7.0
 offset_right = 103.0
 offset_bottom = 40.0
-theme = SubResource("Theme_vuvln")
+theme = SubResource("Theme_0gufw")
 
 [node name="Madison Testimony" type="HBoxContainer" parent="TabContainer/People/VBoxContainer"]
 layout_mode = 2

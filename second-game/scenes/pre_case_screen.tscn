@@ -73,8 +73,8 @@ offset_bottom = 166.0
 grow_horizontal = 2
 theme = SubResource("Theme_us2w4")
 text = "I've got 5 minutes to solve this case, or I'm...
-A potential homicide, was he framed? Was it an accident? 
-Is he a cold blooded murderer? 
+A kidnapping! Where could the baby have gone?
+
 You have three minutes, it’s up to you Casey."
 
 [node name="Button" type="Button" parent="."]

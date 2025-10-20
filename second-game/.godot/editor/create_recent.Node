@@ -1,5 +1,15 @@
 VBoxContainer
+<<<<<<< HEAD
 Label
 Timer
 Button
+=======
+Button
+Label
+HBoxContainer
+TabBar
+TextEdit
+TabContainer
+OptionButton
+>>>>>>> 38d558af66f73ef238745a964475feb063892525
 TextureRect
