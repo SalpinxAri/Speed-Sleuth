@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d12w2yifjxtr4"]
 
-[ext_resource type="Script" uid="uid://2loy88pgseei" path="res://stopwatch.gd" id="1_811c1"]
+[ext_resource type="Script" uid="uid://2loy88pgseei" path="res://scripts/stopwatch.gd" id="1_811c1"]
 [ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="2_d012r"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_fvmy7"]
 font = ExtResource("2_d012r")
