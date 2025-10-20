@@ -121,6 +121,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("8_qdwts")
+nodepath = NodePath("../../Questions/OptionButton")
 
 [connection signal="choice_changed" from="." to="Suspect_img/TextureRect" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Suspect_name/Label" method="_on_ask_questions_choice_changed"]
@@ -128,3 +129,5 @@ script = ExtResource("8_qdwts")
 [connection signal="choice_changed" from="." to="Ask_question/Button" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Response/Label" method="_on_ask_questions_choice_changed"]
 [connection signal="item_selected" from="Questions/OptionButton" to="Ask_question/Button" method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Ask_question/Button" to="Questions/OptionButton" method="_on_button_pressed"]
+[connection signal="pressed" from="Ask_question/Button" to="Response/Label" method="_on_button_pressed"]

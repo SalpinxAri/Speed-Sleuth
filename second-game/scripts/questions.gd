@@ -5,7 +5,7 @@ extends OptionButton
 var suspect_name = "Adolphne Sax"
 var is_suspect = false
 
-var questions = 1
+var questions = {"Madison Woodard": 1, "Adolphine Sax": 1, "Josephine Aguire": 1}
 # Need to import these based on which person it is. 
 var questions_text = []
 
@@ -49,13 +49,24 @@ func _on_ask_questions_choice_changed() -> void:
 			questions_text = [
 				"What did you witness?"
 			]
+		
+	main_stuff()
 	
+func main_stuff() -> void:
 	if is_suspect:
 		self.clear()
 		self.add_item("Pick a question", 0)
 		for i in range(5):
-			if i < questions:
+			if i < questions[suspect_name]:
 				self.add_item(questions_text[i], i+1)
 	else:
 		self.clear()
 		self.add_item(questions_text[0], 1)
+
+
+
+
+func _on_button_pressed() -> void:
+	if is_suspect and questions[suspect_name] < 5:
+		self.add_item(questions_text[questions[suspect_name]])
+		questions[suspect_name] += 1
