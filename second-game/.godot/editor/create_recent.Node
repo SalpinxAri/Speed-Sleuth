@@ -1,1 +1,9 @@
+VBoxContainer
+Button
+Label
+HBoxContainer
+TabBar
+TextEdit
+TabContainer
+OptionButton
 TextureRect

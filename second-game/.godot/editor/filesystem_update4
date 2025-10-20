@@ -1,2 +1,5 @@
+res://scenes/dropdown_menu.tscn
+res://scenes/case.tscn
+res://scenes/cutscene.tscn
 res://scenes/pre_case_screen.tscn
-res://scripts/pre_case_screen.gd
+res://scenes/tabs node.tscn
