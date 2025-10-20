@@ -1,1 +1,13 @@
+res://scenes/pre_case_screen.tscn
+res://scripts/pre_case_screen.gd
+res://scenes/main_game.tscn
 res://scenes/case.tscn
+res://scripts/button_holder.gd
+res://scripts/stopwatch.gd
+res://scenes/stopwatch.tscn
+res://scenes/ask_questions.tscn
+res://scripts/suspect.gd
+res://scripts/suspect_img.gd
+res://scripts/suspect_name.gd
+res://scripts/questions.gd
+res://scripts/ask_question.gd

@@ -10,12 +10,11 @@ var questions = [false, false, false, false, false]
 var questions_text = []
 
 #TODO:
-#Make this update every time one of those buttons is pressed
 #Make the questions list become true as you gather the quesitons
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+
+func _on_ask_questions_choice_changed() -> void:
 	suspect_name = get_node(suspect_name_path).suspect_name
 	match suspect_name:
 		"Madison Woodard":
@@ -27,7 +26,7 @@ func _ready() -> void:
 				"Would anybody be able to provide an alibi for you during the time frame the child went missing?",
 				"Where do you work in the hospital?"
 			]
-		"Adolphne Sax":
+		"Adolphine Sax":
 			is_suspect = true
 			questions_text = [
 				"Where were you at the time of the crime?",
@@ -36,7 +35,7 @@ func _ready() -> void:
 				"What injury originally got you in as a patient today?",
 				"Did anybody see you during the time the crime was committed?"
 			]
-		"Josephine Aguirre":
+		"Josephine Aguire":
 			is_suspect = true
 			questions_text = [
 				"Where were you at the time of the crime?",
@@ -46,15 +45,18 @@ func _ready() -> void:
 				"Do you have any children of your own, or are you looking to have children of your own?"
 			]
 		_:
+			print("WITNESS", suspect_name)
 			is_suspect = false
 			questions_text = [
 				"What did you witness?"
 			]
 	
-	if len(questions) != 0:
-		self.remove_item(0)
+	if is_suspect:
+		self.clear()
 		self.add_item("Pick a question", 0)
 		for i in range(len(questions)):
-			if questions[i] or !is_suspect:
-				self.add_item(questions_text, i+1)
-	
+			if questions[i]:
+				self.add_item(questions_text[i], i+1)
+	else:
+		self.clear()
+		self.add_item(questions_text[0], 1)

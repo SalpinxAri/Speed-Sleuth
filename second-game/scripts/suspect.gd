@@ -1,9 +1,16 @@
 extends Control
 
+@export var nodepath:NodePath
+signal choice_changed
+
 
 var suspect_name = 'Adolphne Sax'
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	#TODO set this to the correct name oncce we have the buttons access
-	suspect_name = 'Adolphne Sax'
+
+
 	
+
+
+func _on_case_pressed() -> void:
+	suspect_name = get_node(nodepath).suspect_name
+	choice_changed.emit()

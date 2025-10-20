@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcfkl2o6wuo7x"]
+
+[ext_resource type="PackedScene" uid="uid://ch6gwrojqu8qo" path="res://scenes/case.tscn" id="1_72e8q"]
+[ext_resource type="PackedScene" uid="uid://cljcdt16rmg05" path="res://scenes/ask_questions.tscn" id="2_0rdsr"]
+[ext_resource type="PackedScene" uid="uid://d12w2yifjxtr4" path="res://scenes/stopwatch.tscn" id="2_d2op2"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stopwatch" parent="." instance=ExtResource("2_d2op2")]
+layout_mode = 1
+offset_left = 231.0
+offset_top = 1.0
+offset_right = -775.0
+offset_bottom = -621.0
+
+[node name="ask_questions" parent="." instance=ExtResource("2_0rdsr")]
+layout_mode = 1
+offset_left = 427.0
+offset_right = -342.0
+nodepath = NodePath("../Case")
+
+[node name="Case" parent="." instance=ExtResource("1_72e8q")]
+
+[connection signal="pressed" from="Case" to="ask_questions" method="_on_case_pressed"]

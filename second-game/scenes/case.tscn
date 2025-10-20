@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch6gwrojqu8qo"]
+[gd_scene load_steps=7 format=3 uid="uid://ch6gwrojqu8qo"]
 
+[ext_resource type="Script" uid="uid://b134trtdicmf5" path="res://scripts/button_holder.gd" id="1_4w0dx"]
 [ext_resource type="FontFile" uid="uid://b4x2noqamp7i8" path="res://assets/fonts/m5x7.ttf" id="1_712p6"]
 
 [sub_resource type="Theme" id="Theme_712p6"]
@@ -15,10 +16,11 @@ default_font = ExtResource("1_712p6")
 default_font_size = 15
 
 [node name="Case" type="Node2D"]
+script = ExtResource("1_4w0dx")
 
 [node name="TabContainer" type="TabContainer" parent="."]
-offset_top = 432.0
-offset_right = 1152.0
+offset_top = 5.0
+offset_right = 399.0
 offset_bottom = 648.0
 theme = SubResource("Theme_712p6")
 current_tab = 0
@@ -29,12 +31,13 @@ metadata/_tab_index = 0
 
 [node name="Label" type="Label" parent="TabContainer/Overview"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 393.0
+offset_bottom = 623.0
 theme = SubResource("Theme_4w0dx")
 theme_override_font_sizes/font_size = 32
 text = "The first 72 hours are the most critical in finding a missing child, is that enough time for you? 
 Every criminal makes mistakes, it's up to you to find the truth Casey!"
+autowrap_mode = 3
 
 [node name="People" type="TabBar" parent="TabContainer"]
 visible = false
@@ -49,17 +52,6 @@ offset_left = 7.0
 offset_right = 103.0
 offset_bottom = 40.0
 theme = SubResource("Theme_vuvln")
-
-[node name="Madison Testimony" type="HBoxContainer" parent="TabContainer/People/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TabContainer/People/VBoxContainer/Madison Testimony"]
-layout_mode = 2
-text = "Madison Woodard (Witness):"
-
-[node name="Button" type="Button" parent="TabContainer/People/VBoxContainer/Madison Testimony"]
-layout_mode = 2
-text = "Get Testimony"
 
 [node name="Jared Testimony" type="HBoxContainer" parent="TabContainer/People/VBoxContainer"]
 layout_mode = 2
@@ -142,3 +134,11 @@ text = "Interrogate"
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Jared Testimony/Button" to="." method="_on_button_Jared_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Jago Testimony/Button" to="." method="_on_button_Jago_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Aaron Testimony/Button" to="." method="_on_button_Aaron_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Claire Testimony/Button" to="." method="_on_button_Claire_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Madison Interrogate/Button" to="." method="_on_button_Madison_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Adolphine Interrogate/Button" to="." method="_on_button_Adolphine_down"]
+[connection signal="button_down" from="TabContainer/People/VBoxContainer/Josephine Interrogate/Button" to="." method="_on_button_Josephine_down"]
