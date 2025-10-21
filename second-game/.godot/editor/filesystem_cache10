@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761004319
+::res://::1761007327
 ::res://assets/::1760927685
 ::res://assets/fonts/::1760929159
 m5x7.ttf::FontFile::4471041171725308777::1760927685::1760929159::1::::<><><>0<>0<>fecc06ff6a4711b4d396de0692ee21e6<>res://.godot/imported/m5x7.ttf-47a8993373daecfb025c7957e719fc41.fontdata::
@@ -21,24 +21,26 @@ Jago Ramon Witness.png::CompressedTexture2D::4000202159043775223::1760948123::17
 Jared Foley Witness.png::CompressedTexture2D::6487588510841131422::1760948123::1760948124::1::::<><><>0<>0<>a0a241938c871fe2f091308a0c1d1c3e<>res://.godot/imported/Jared Foley Witness.png-b3fdd3ddcaaa8cfe9aba2062924e42a8.ctex::
 Josephine Aguirre Neutral.png::CompressedTexture2D::9101271198604760747::1760948123::1760948124::1::::<><><>0<>0<>17d0a7f6a511fb00a82e0f14be729a7b<>res://.godot/imported/Josephine Aguirre Neutral.png-f90f22b26b3fe59fc61293ac6dc3e88f.ctex::
 Maddison Woodard Neutral.png::CompressedTexture2D::7965531088110833257::1760948123::1760948124::1::::<><><>0<>0<>d2d5f424c9bcd4b8bc1cdf80c16d4e7c<>res://.godot/imported/Maddison Woodard Neutral.png-5a9bdf7aef8b40b247be46965ce1ea1b.ctex::
-::res://scenes/::1760981724
-ask_questions.tscn::PackedScene::5563625878098606808::1760981724::0::1::::<><><>0<>0<><>::uid://b3a6d1emr12fc::::res://scripts/suspect.gd<>uid://d18cj6dfjruhs::::res://assets/sprites/icon.svg<>uid://cybns085jkiy1::::res://scripts/suspect_img.gd<>uid://mx0mpclsl11k::::res://scripts/suspect_name.gd<>uid://ceafoki62q5m0::::res://scripts/questions.gd<>uid://sej7alfkvpjt::::res://scripts/add_to_notes_button.gd<>uid://d3fu7lvxyqoaf::::res://scripts/ask_question.gd<>uid://c2i0eus2cpqdn::::res://scripts/response.gd
-case.tscn::PackedScene::5328563487606127602::1760950281::0::1::::<><><>0<>0<><>::uid://b134trtdicmf5::::res://scripts/button_holder.gd<>uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf
+::res://scenes/::1761007311
+ask_questions.tscn::PackedScene::5563625878098606808::1761007311::0::1::::<><><>0<>0<><>::uid://b3a6d1emr12fc::::res://scripts/suspect.gd<>uid://d18cj6dfjruhs::::res://assets/sprites/icon.svg<>uid://cybns085jkiy1::::res://scripts/suspect_img.gd<>uid://mx0mpclsl11k::::res://scripts/suspect_name.gd<>uid://ceafoki62q5m0::::res://scripts/questions.gd<>uid://sej7alfkvpjt::::res://scripts/add_to_notes_button.gd<>uid://d3fu7lvxyqoaf::::res://scripts/ask_question.gd<>uid://c2i0eus2cpqdn::::res://scripts/response.gd
+case.tscn::PackedScene::5328563487606127602::1761007311::0::1::::<><><>0<>0<><>::uid://b134trtdicmf5::::res://scripts/button_holder.gd<>uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf<>uid://1dbljpc3rhl4::::res://scripts/EvidenceLabel.gd<>uid://b8f4yrh2yjbgm::::res://scripts/add_evidence.gd
 cutscene.tscn::PackedScene::8318566058496644706::1760942132::0::1::::<><><>0<>0<><>::uid://dnlkuetdvkj0k::::res://assets/sprites/Case1_Intro_cutscene/Case2Intro1Img1.jpg<>uid://2v8e8xs46nwt::::res://scripts/cutscene.gd
-main_game.tscn::PackedScene::7310589881982701935::1760949504::0::1::::<><><>0<>0<><>::uid://ch6gwrojqu8qo::::res://scenes/case.tscn<>uid://cljcdt16rmg05::::res://scenes/ask_questions.tscn<>uid://d12w2yifjxtr4::::res://scenes/stopwatch.tscn
+main_game.tscn::PackedScene::7310589881982701935::1761007311::0::1::::<><><>0<>0<><>::uid://ch6gwrojqu8qo::::res://scenes/case.tscn<>uid://cljcdt16rmg05::::res://scenes/ask_questions.tscn<>uid://d12w2yifjxtr4::::res://scenes/stopwatch.tscn
 menu.tscn::PackedScene::7778860682783435341::1760933762::0::1::::<><><>0<>0<><>::uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf<>uid://cjbna1tgfufmo::::res://scripts/menu.gd<>uid://dcrawx1rfa2gv::::res://assets/sprites/pocketwatch_transparent.png
 pre_case_screen.tscn::PackedScene::9050306737711935610::1760946846::0::1::::<><><>0<>0<><>::uid://ciwc5lu0qc87t::::res://assets/sprites/Fq2VxM.png<>uid://bxj4ud84x0nu::::res://scripts/pre_case_screen.gd<>uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf
-stopwatch.tscn::PackedScene::9041295448463022995::1760948011::0::1::::<><><>0<>0<><>::uid://2loy88pgseei::::res://scripts/stopwatch.gd<>uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf
-::res://scripts/::1760981676
-add_to_notes_button.gd::GDScript::1272260312074908969::1760952781::0::1::::<>Button<><>0<>0<><>::
+stopwatch.tscn::PackedScene::9041295448463022995::1761007304::0::1::::<><><>0<>0<><>::uid://2loy88pgseei::::res://scripts/stopwatch.gd<>uid://b4x2noqamp7i8::::res://assets/fonts/m5x7.ttf
+::res://scripts/::1761007311
+add_evidence.gd::GDScript::4714778969332180548::1761007311::0::1::::<>TabBar<><>0<>0<><>::
+add_to_notes_button.gd::GDScript::1272260312074908969::1761007311::0::1::::<>Button<><>0<>0<><>::
 ask_question.gd::GDScript::9136143658250270941::1760951376::0::1::::<>Button<><>0<>0<><>::
-button_holder.gd::GDScript::4270928840665363240::1760951288::0::1::::<>Node2D<><>0<>0<><>::
+button_holder.gd::GDScript::4270928840665363240::1761007311::0::1::::<>Node2D<><>0<>0<><>::
 cutscene.gd::GDScript::1940463284657924475::1760930981::0::1::::<>Control<><>0<>0<><>::
+EvidenceLabel.gd::GDScript::1831183924587924087::1761007311::0::1::::<>Label<><>0<>0<><>::
 menu.gd::GDScript::5407396054026991530::1760929556::0::1::::<>Control<><>0<>0<><>::
 pre_case_screen.gd::GDScript::118268829580019610::1760946846::0::1::::<>Control<><>0<>0<><>::
 questions.gd::GDScript::5053925867054012473::1760981636::0::1::::<>OptionButton<><>0<>0<><>::
 response.gd::GDScript::6685981315143855531::1760981676::0::1::::<>Label<><>0<>0<><>::
-stopwatch.gd::GDScript::1918701615413342000::1760948011::0::1::::<>Control<><>0<>0<><>::
-suspect.gd::GDScript::4353597262070800376::1760949504::0::1::::<>Control<><>0<>0<><>::
+stopwatch.gd::GDScript::1918701615413342000::1761007311::0::1::::<>Control<><>0<>0<><>::
+suspect.gd::GDScript::4353597262070800376::1761007311::0::1::::<>Control<><>0<>0<><>::
 suspect_img.gd::GDScript::6460260823087083466::1760951288::0::1::::<>TextureRect<><>0<>0<><>::
 suspect_name.gd::GDScript::891286957809951806::1760950426::0::1::::<>Label<><>0<>0<><>::
