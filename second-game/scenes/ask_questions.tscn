@@ -100,6 +100,7 @@ offset_bottom = 625.0
 
 [node name="Button" type="Button" parent="Ask_question"]
 layout_mode = 2
+disabled = true
 text = "Ask"
 script = ExtResource("7_btou2")
 nodepath = NodePath("../../Questions/OptionButton")
@@ -129,5 +130,6 @@ nodepath = NodePath("../../Questions/OptionButton")
 [connection signal="choice_changed" from="." to="Ask_question/Button" method="_on_ask_questions_choice_changed"]
 [connection signal="choice_changed" from="." to="Response/Label" method="_on_ask_questions_choice_changed"]
 [connection signal="item_selected" from="Questions/OptionButton" to="Ask_question/Button" method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Add_to_notes/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Ask_question/Button" to="Questions/OptionButton" method="_on_button_pressed"]
 [connection signal="pressed" from="Ask_question/Button" to="Response/Label" method="_on_button_pressed"]

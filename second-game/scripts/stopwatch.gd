@@ -39,7 +39,7 @@ func view_time() -> void:
 		
 	
 	
-func _process(delta):
+func _process(_delta):
 	view_time()
 		
 	

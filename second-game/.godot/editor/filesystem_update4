@@ -1,3 +1,9 @@
-res://scripts/response.gd
+res://scripts/EvidenceLabel.gd
+res://scripts/suspect.gd
 res://scenes/ask_questions.tscn
-res://scripts/questions.gd
+res://scripts/button_holder.gd
+res://scripts/add_to_notes_button.gd
+res://scenes/main_game.tscn
+res://scenes/case.tscn
+res://scripts/add_evidence.gd
+res://scripts/stopwatch.gd

@@ -1,8 +1,11 @@
 extends Node2D
 
 var suspect_name = "Adolphne Sax"
+var evi_text = ""
 signal pressed
+signal add_evidence
 
+@export var ask_questions:NodePath
 
 func _on_button_Madison_down() -> void:
 	suspect_name = "Madison Woodard"
@@ -45,3 +48,8 @@ func _on_button_Josephine_down() -> void:
 
 
 	
+
+
+func _on_ask_questions_add_notes() -> void:
+	evi_text = get_node(ask_questions).evi_text
+	add_evidence.emit()

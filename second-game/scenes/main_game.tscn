@@ -26,5 +26,8 @@ offset_right = -342.0
 nodepath = NodePath("../Case")
 
 [node name="Case" parent="." instance=ExtResource("1_72e8q")]
+ask_questions = NodePath("../ask_questions")
 
+[connection signal="add_notes" from="ask_questions" to="Case" method="_on_ask_questions_add_notes"]
+[connection signal="add_evidence" from="Case" to="ask_questions" method="_on_case_add_evidence"]
 [connection signal="pressed" from="Case" to="ask_questions" method="_on_case_pressed"]
