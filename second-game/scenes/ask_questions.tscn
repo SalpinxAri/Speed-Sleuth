@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://cljcdt16rmg05"]
+
+[ext_resource type="Script" uid="uid://b3a6d1emr12fc" path="res://scripts/suspect.gd" id="1_3wvmk"]
+[ext_resource type="Texture2D" uid="uid://d18cj6dfjruhs" path="res://assets/sprites/icon.svg" id="2_1a1s3"]
+[ext_resource type="Script" uid="uid://cybns085jkiy1" path="res://scripts/suspect_img.gd" id="3_d4mlx"]
+[ext_resource type="Script" uid="uid://mx0mpclsl11k" path="res://scripts/suspect_name.gd" id="4_nlm84"]
+[ext_resource type="Script" uid="uid://ceafoki62q5m0" path="res://scripts/questions.gd" id="5_nfgpo"]
+[ext_resource type="Script" uid="uid://sej7alfkvpjt" path="res://scripts/add_to_notes_button.gd" id="6_ilq03"]
+[ext_resource type="Script" uid="uid://d3fu7lvxyqoaf" path="res://scripts/ask_question.gd" id="7_btou2"]
+[ext_resource type="Script" uid="uid://c2i0eus2cpqdn" path="res://scripts/response.gd" id="8_qdwts"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_klkq2"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_5maji"]
+
+[node name="ask_questions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -762.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3wvmk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 648.0
+color = Color(0.20152658, 0.20152658, 0.20152652, 1)
+
+[node name="Suspect_img" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 354.0
+offset_bottom = 322.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Suspect_img"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_1a1s3")
+stretch_mode = 4
+script = ExtResource("3_d4mlx")
+
+[node name="Suspect_name" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 340.0
+offset_bottom = 40.0
+alignment = 2
+
+[node name="Label" type="Label" parent="Suspect_name"]
+layout_mode = 2
+text = "Suspect Name"
+label_settings = SubResource("LabelSettings_klkq2")
+horizontal_alignment = 2
+script = ExtResource("4_nlm84")
+
+[node name="Questions" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 585.0
+offset_right = 255.0
+offset_bottom = 625.0
+
+[node name="OptionButton" type="OptionButton" parent="Questions"]
+custom_minimum_size = Vector2(209.64, 0)
+layout_mode = 2
+clip_text = true
+selected = 0
+fit_to_longest_item = false
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "No Valid Questions"
+popup/item_0/id = 0
+script = ExtResource("5_nfgpo")
+suspect_name_path = NodePath("../..")
+
+[node name="Add_to_notes" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 535.0
+offset_right = 132.0
+offset_bottom = 575.0
+
+[node name="Button" type="Button" parent="Add_to_notes"]
+layout_mode = 2
+text = "Add to notes"
+script = ExtResource("6_ilq03")
+
+[node name="Ask_question" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 585.0
+offset_right = 352.0
+offset_bottom = 625.0
+
+[node name="Button" type="Button" parent="Ask_question"]
+layout_mode = 2
+text = "Ask"
+script = ExtResource("7_btou2")
+nodepath = NodePath("../../Questions/OptionButton")
+
+[node name="Response" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 331.0
+offset_right = 330.0
+offset_bottom = 448.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Response"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "What Should I ask them?"
+label_settings = SubResource("LabelSettings_5maji")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("8_qdwts")
+nodepath = NodePath("../../Questions/OptionButton")
+
+[connection signal="choice_changed" from="." to="Suspect_img/TextureRect" method="_on_ask_questions_choice_changed"]
+[connection signal="choice_changed" from="." to="Suspect_name/Label" method="_on_ask_questions_choice_changed"]
+[connection signal="choice_changed" from="." to="Questions/OptionButton" method="_on_ask_questions_choice_changed"]
+[connection signal="choice_changed" from="." to="Ask_question/Button" method="_on_ask_questions_choice_changed"]
+[connection signal="choice_changed" from="." to="Response/Label" method="_on_ask_questions_choice_changed"]
+[connection signal="item_selected" from="Questions/OptionButton" to="Ask_question/Button" method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Ask_question/Button" to="Questions/OptionButton" method="_on_button_pressed"]
+[connection signal="pressed" from="Ask_question/Button" to="Response/Label" method="_on_button_pressed"]

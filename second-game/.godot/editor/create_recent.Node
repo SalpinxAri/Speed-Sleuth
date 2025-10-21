@@ -1,5 +1,10 @@
+ColorRect
+Button
 VBoxContainer
 Label
-Timer
-Button
+HBoxContainer
+TabBar
+TabContainer
 TextureRect
+Sprite2D
+Timer
